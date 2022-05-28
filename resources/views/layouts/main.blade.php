@@ -19,8 +19,14 @@
   .main-logo{
     border-radius:50%;
   }
+  .daterangepicker{
+		box-shadow: 0px 0px 30px rgba(0, 0, 0, .4);
+	}
+	.daterangepicker td.disabled, .daterangepicker option.disabled{
+	color: #d03232 !important;
+	}
 </style>
-<body class="light-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
+<body class="dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed sidebar-collapse">
 <div class="wrapper">
 
   <!-- Preloader -->

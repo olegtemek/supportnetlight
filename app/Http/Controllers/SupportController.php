@@ -28,10 +28,13 @@ class SupportController extends Controller
                 $date2 = date("d-m-Y", $d1); // переводит в новый формат
 
                 $now = date("d-m-Y", strtotime('+3 days')); // Прибавляем к сегодняшней дате +3
-                if ($now > $date2) { // Если совпало то в массив, из него всплывашка
+
+
+                if (strtotime($now) > strtotime($date2)) { // Если совпало то в массив, из него всплывашка
                     array_push($supportArrayEnds, $support);
                 }
             }
+
             return view('supports.index', ['supports' => $supports, 'supportsEnds' => $supportArrayEnds]);
         }
         return view('supports.index', ['supports' => $supports]);
@@ -132,7 +135,7 @@ class SupportController extends Controller
         $support = Support::where('id', $id)->first();
         $support->status = 0;
         $support->save();
-        return redirect()->route('support.index')->with('message', 'Запись была удалена');
+        return redirect()->route('support.index')->with('message', 'Запись была изменена');
     }
 
     public function deleted()

@@ -7,7 +7,7 @@
 @section('content')
 
 
-@isset($supportsEnds)
+@if(!empty($supportsEnds))
 <div class="card card-warning">
   <div class="card-header">
     <h3 class="card-title">Возможно закончилась или скоро закончится поддержка у этих сайтов</h3>
@@ -29,7 +29,7 @@
   </div>
   
   </div>
-@endisset
+@endif
 
 <div class="row">
     @if (session('message'))
