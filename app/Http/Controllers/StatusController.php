@@ -85,7 +85,8 @@ class StatusController extends Controller
      */
     public function edit($id)
     {
-        //
+        $status = Status::where('id', $id)->first();
+        return view('statuses.edit', ['status' => $status]);
     }
 
     /**
@@ -97,7 +98,17 @@ class StatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validated = $request->validate([
+            'title' => 'required|',
+            'link' => 'required',
+        ]);
+        $status = Status::where('id', $id)->first();
+        $status->title = $request->title;
+        $status->link = $request->link;
+        $status->status = false;
+        if ($status->save()) {
+            return redirect()->route('status.index')->with('message', 'Запись была добавленна');
+        }
     }
 
     /**
