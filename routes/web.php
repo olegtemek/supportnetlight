@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AccessController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\StatusController;
 use App\Http\Controllers\SupportController;
 use App\Models\Support;
 use Illuminate\Support\Facades\Route;
@@ -40,3 +41,5 @@ Route::get('/access/deleted', [AccessController::class, 'deleted'])->name('acces
 Route::post('/access/deleted/{id}', [AccessController::class, 'restore'])->name('access.restore');
 Route::get('/access/search', [AccessController::class, 'search'])->name('access.search');
 Route::resource('/access', AccessController::class, ['names' => 'access']);
+
+Route::resource('/status', StatusController::class);

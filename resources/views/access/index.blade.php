@@ -90,6 +90,23 @@
         },
       })
   });
+
+
+
+  
+
+// $.ajax({
+//   url:'https://support.netlight.kz/sup.php',
+//   method:'POST',
+//   dataType:'json',
+//   complete:function(data){
+//     if(data.responseText == 1){
+//       console.log('good')
+//     }else{
+//       console.log('notgood')
+//     }
+//   },
+// })
   
   </script>
 

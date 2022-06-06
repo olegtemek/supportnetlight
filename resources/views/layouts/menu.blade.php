@@ -32,9 +32,17 @@
 
         <li class="nav-item">
           <a href="{{ route('access.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-table"></i>
+            <i class="nav-icon fas fa-lock-open"></i>
             <p>
               Доступы
+            </p>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('status.index') }}" class="nav-link">
+            <i class="nav-icon fas fa-question-circle"></i>
+            <p>
+              Статусы сайтов
             </p>
             </a>
         </li>
