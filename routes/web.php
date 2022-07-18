@@ -4,6 +4,7 @@ use App\Http\Controllers\AccessController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\SupportController;
+use App\Http\Controllers\TariffController;
 use App\Models\Support;
 use Illuminate\Support\Facades\Route;
 
@@ -43,3 +44,4 @@ Route::get('/access/search', [AccessController::class, 'search'])->name('access.
 Route::resource('/access', AccessController::class, ['names' => 'access']);
 
 Route::resource('/status', StatusController::class);
+Route::resource('/tariff', TariffController::class);

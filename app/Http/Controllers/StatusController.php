@@ -16,22 +16,6 @@ class StatusController extends Controller
     {
 
         $statuses = Status::all();
-
-        foreach ($statuses as $status) {
-            $arrContextOptions =  stream_context_create(array(
-                'http' => array("ignore_errors" => true),
-                "ssl" => array(
-                    "verify_peer" => false,
-                    "verify_peer_name" => false,
-                ),
-            ));
-            $test = file_get_contents($status->link, false, $arrContextOptions);
-            if ($test == 1) {
-                $status->status = true;
-            } else {
-                $status->status = false;
-            }
-        }
         return view('statuses.index', ['statuses' => $statuses]);
     }
 

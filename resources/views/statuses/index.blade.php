@@ -18,7 +18,7 @@
   <div class="col-12 mt-4">
     <div class="card">
     
-      <div class="card-body table-responsive p-0" style="height: 300px;">
+      <div class="card-body table-responsive p-0" >
         <table class="table table-head-fixed ">
           <thead>
             <tr>
@@ -34,7 +34,7 @@
               <tr>
                 <td>{{ $status->id }}</td>
                 <td>{{ $status->title }}</td>
-                <td>{{ $status->link }}</td>
+                <td class="link-site">{{ $status->link }}</td>
                 <td>
                   @if ($status->status == 1)
                       <ul style="padding-left:0">
@@ -72,21 +72,22 @@
 @section('js')
 
 <script>
-
-
-// $.ajax({
-//   url:'https://support.netlight.kz/sup.php',
-//   method:'POST',
-//   dataType:'json',
-//   complete:function(data){
-//     if(data.responseText == 1){
-//       console.log('good')
-//     }else{
-//       console.log('notgood')
-//     }
-//   },
-// })
+  let links = document.querySelectorAll('.link-site');
+  console.log(links)
   
+  for(let i =0;i<links.length;i++){
+    let status = links[i].parentNode.children[3]
+    $.ajax({
+        url: links[i].innerText,
+        success: function() {
+      status.innerHTML = <span class="text-success"> Работает </span>
+        },
+    error:function(){
+      document.querySelector('#iconStatus').innerHTML = `<i class="nav-icon far fa-angry"></i>`
+      
+    }  
+    });
+  }
   </script>
 
 @endsection

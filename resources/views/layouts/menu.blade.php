@@ -23,7 +23,8 @@
              with font-awesome or any other icon font library -->
         <li class="nav-item">
           <a href="{{ route('support.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-th"></i>
+            {{-- <i class="nav-icon fas fa-th"></i> --}}
+            <i class="nav-icon fab fa-accessible-icon"></i>
             <p>
               Поддержка
             </p>
@@ -32,17 +33,25 @@
 
         <li class="nav-item">
           <a href="{{ route('access.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-lock-open"></i>
+            <i class="nav-icon far fa-door-open"></i>
             <p>
               Доступы
             </p>
             </a>
         </li>
         <li class="nav-item">
-          <a href="{{ route('status.index') }}" class="nav-link">
-            <i class="nav-icon fas fa-question-circle"></i>
+          <a href="{{ route('status.index') }}"  class="nav-link">
+            <span id="iconStatus"><i class="nav-icon far fa-smile"></i></span>
             <p>
               Статусы сайтов
+            </p>
+            </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('tariff.index') }}" class="nav-link">
+            <i class="nav-icon far fa-business-time"></i>
+            <p>
+              Тарифы
             </p>
             </a>
         </li>
