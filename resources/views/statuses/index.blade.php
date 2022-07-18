@@ -80,7 +80,7 @@
     $.ajax({
         url: links[i].innerText,
         success: function() {
-      status.innerHTML = <span class="text-success"> Работает </span>
+      status.innerHTML = `<span class="text-success"> Работает </span>`
         },
     error:function(){
       document.querySelector('#iconStatus').innerHTML = `<i class="nav-icon far fa-angry"></i>`
