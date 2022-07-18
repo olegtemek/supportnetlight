@@ -33,7 +33,7 @@
 
         <li class="nav-item">
           <a href="{{ route('access.index') }}" class="nav-link">
-            <i class="nav-icon far fa-door-open"></i>
+            <i class="nav-icon fa fa-door-open"></i>
             <p>
               Доступы
             </p>
@@ -49,7 +49,7 @@
         </li>
         <li class="nav-item">
           <a href="{{ route('tariff.index') }}" class="nav-link">
-            <i class="nav-icon far fa-business-time"></i>
+            <i class="nav-icon fa fa-business-time"></i>
             <p>
               Тарифы
             </p>
